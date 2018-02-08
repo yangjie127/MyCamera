@@ -1,6 +1,7 @@
 # MyCamera
-天空飘雪动画
+综合式 小Demo
 
+0、天空飘雪Demo
 
 1、添加 一个 自定义Camera MainActivity
 
