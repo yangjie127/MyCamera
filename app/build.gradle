@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+//使用greendao
+apply plugin: 'org.greenrobot.greendao'
+
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
@@ -10,6 +14,17 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    //greendao配置
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 1
+    }
+    //开启同步
+    realm {
+        syncEnabled = true;
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -17,6 +32,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,6 +44,17 @@ dependencies {
 
     compile 'com.wonderkiln:camerakit:0.13.1'
 
-
+    //动画
     compile 'nl.dionsegijn:konfetti:1.1.0'
+
+    //RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //greendao依赖
+    compile 'org.greenrobot:greendao:3.2.0'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
 }
+
